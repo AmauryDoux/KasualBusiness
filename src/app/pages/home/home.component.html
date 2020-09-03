@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row title">
+    <h1>Welcome to Air Quality Test Online </h1>
+  </div>
+</div>
+
+<div class="container home-container">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8 form-container">
+      <form class="form">
+        <div class="row form-text">
+          <h2>To test the air quality in your country, <br>please enter your country name below: </h2>
+        </div>
+        <br>
+        <div class="row">
+            <input class="form-control col-10" type="" [(ngModel)]="country" name="country">
+            <button class="btn btn-primary col-2" (click)="searchCountry(country)" >Search</button>
+        </div>
+        <br>  
+        <div class="row select-label">
+          <p>Cannot find the correct country? Select it from the list below. </p>
+        </div>
+        <div class="row">
+          <select class="custom-select mb-3" [(ngModel)]="country" name="selectCountry">
+            <option *ngFor="let country of allCountries" [ngValue]="country.name">{{country.code}}-{{country.name}}</option>
+          </select>
+        </div>
+      </form> 
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+</div>
